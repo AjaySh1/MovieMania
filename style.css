@@ -2,7 +2,7 @@
 
 :root {
   --primary-color: #000000;
-  --secondary-color: #373b69;
+  --secondary-color: #960606;
 }
 
 * {
@@ -20,12 +20,13 @@ header {
   display: flex;
   justify-content: space-between;
   background-color: var(--secondary-color);
+  position: static;
 }
 .moviemania{
   font-size: larger;
   color: #fff;
 }
-.search {
+/* .search {
   background-color: transparent;
   border: 2px solid var(--primary-color);
   border-radius: 50px;
@@ -42,8 +43,11 @@ header {
 .search:focus {
   outline: none;
   background-color: var(--primary-color);
+} */
+#mania
+{
+  color: aqua;
 }
-
 
 .search-bar {
   padding: 10px;
@@ -61,17 +65,19 @@ header {
 
 .search-bar:focus {
   outline: none; /* Remove default focus outline */
-  border-bottom: 2px solid #e74c3c; /* Change border color on focus */
+  border-bottom: 3px solid #e74c3c; /* Change border color on focus */
 }
 
+ /* .search-bar:hover {
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); */
+
+/*.search-bar::placeholder {
+  color: #777; 
+} */
 
 
 
 
-#mania
-{
-  color: aqua;
-}
 main {
   display: flex;
   flex-wrap: wrap;
