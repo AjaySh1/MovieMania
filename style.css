@@ -25,6 +25,7 @@ header {
 .moviemania{
   font-size: larger;
   color: #fff;
+  font-weight: bolder;
 }
 /* .search {
   background-color: transparent;
@@ -68,30 +69,23 @@ header {
   border-bottom: 3px solid #e74c3c; /* Change border color on focus */
 }
 
- /* .search-bar:hover {
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); */
-
-/*.search-bar::placeholder {
-  color: #777; 
-} */
-
-
 
 
 main {
+  margin-top: 2%;
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
+  justify-content:space-around;
 }
 
 .movie {
-  width: 300px;
+  width: 250px;
   margin: 1rem;
   background-color: var(--secondary-color);
-  box-shadow: 0 4px 5px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 4px 5px rgba(255, 252, 252, 0.233);
   position: relative;
   overflow: hidden;
-  border-radius: 3px;
+  border-radius: 10px;
 }
 
 .movie img {
