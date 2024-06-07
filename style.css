@@ -19,6 +19,7 @@ header {
   padding: 1rem;
   display: flex;
   justify-content: space-between;
+  flex-wrap: wrap;
   background-color: var(--secondary-color);
   position: static;
 }
@@ -56,7 +57,8 @@ header {
   width: 75%;
   border: none;
   border-bottom: 2px solid #0c5f97; 
-  height: 75%;
+  height: 100%;
+  margin-left: 50px;
   border-radius: 5px;
   box-sizing: border-box;
   background-color: #f8f8f8; /* Match the background color */
