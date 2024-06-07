@@ -54,10 +54,10 @@ header {
 .search-bar {
   padding: 10px;
   font-size: 18px;
-  width: 75%;
+  width: 10rem;
   border: none;
   border-bottom: 2px solid #0c5f97; 
-  height: 100%;
+  height: 75%;
   border-radius: 5px;
   box-sizing: border-box;
   background-color: #f8f8f8; /* Match the background color */
