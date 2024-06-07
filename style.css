@@ -58,7 +58,6 @@ header {
   border: none;
   border-bottom: 2px solid #0c5f97; 
   height: 100%;
-  margin-left: 50px;
   border-radius: 5px;
   box-sizing: border-box;
   background-color: #f8f8f8; /* Match the background color */
@@ -81,7 +80,7 @@ main {
 }
 
 .movie {
-  width: 250px;
+  width: 16%;
   margin: 1rem;
   background-color: var(--secondary-color);
   box-shadow: 0 4px 5px rgba(255, 252, 252, 0.233);
