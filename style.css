@@ -28,10 +28,10 @@ header {
   height: 60px;
 }
 .moviemania{
-  font-size: larger;
+  font-size: 20px;
   color: #fff;
   font-weight: bolder;
-  margin-left: -20px;
+  margin-left: -25px;
 }
 /* .search {
   background-color: transparent;
@@ -59,15 +59,17 @@ header {
 .search-bar {
   padding: 10px;
   font-size: 18px;
-  width: 10rem;
+  width: 9rem;
   border: none;
   border-bottom: 2px solid #0c5f97; 
-  height: 75%;
+  height: 28px;
   border-radius: 5px;
   box-sizing: border-box;
   background-color: #f8f8f8; /* Match the background color */
   color: #333; /* Text color */
   transition: border-bottom 0.3s; /* Smooth transition for border-bottom */
+  margin-top: 3px;
+  margin-left: 20px;
 }
 
 .search-bar:focus {
@@ -160,7 +162,7 @@ main {
   cursor: pointer;
   z-index: 1200;
   margin-left: 1rem;
-  margin-right: 10px;
+  margin-right: 2px;
 }
 
 .sidebar {
