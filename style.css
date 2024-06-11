@@ -14,19 +14,24 @@ body {
   font-family: 'Poppins', sans-serif;
   margin: 0;
 }
-
+/* header css */
 header {
   padding: 1rem;
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
   background-color: var(--secondary-color);
-  position: static;
+  position: fixed;
+  width: 100%;
+  margin-top: -7px;
+  z-index: 100;
+  height: 60px;
 }
 .moviemania{
   font-size: larger;
   color: #fff;
   font-weight: bolder;
+  margin-left: -20px;
 }
 /* .search {
   background-color: transparent;
@@ -50,7 +55,7 @@ header {
 {
   color: aqua;
 }
-
+/* css for search bar */
 .search-bar {
   padding: 10px;
   font-size: 18px;
@@ -71,9 +76,9 @@ header {
 }
 
 
-
+/* css for main object */
 main {
-  margin-top: 2%;
+ 
   display: flex;
   flex-wrap: wrap;
   justify-content:space-around;
@@ -127,7 +132,8 @@ main {
 }
 
 .overview {
-  background-color: #fff;
+  background-color:rgb(255, 255, 255);
+  color: rgb(5, 39, 39);
   padding: 2rem;
   position: absolute;
   left: 0;
@@ -138,7 +144,57 @@ main {
   overflow-y: auto;
   transition: transform 0.3s ease-in;
 }
-
+.overview h3{
+  color: #960606;
+  text-decoration: underline;
+}
 .movie:hover .overview {
   transform: translateY(0);
+}
+/* End of  */
+.sidebar-toggle {
+  font-size: 24px;
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+  z-index: 1200;
+  margin-left: 1rem;
+  margin-right: 10px;
+}
+
+.sidebar {
+  margin-top: 53px;
+  height: 100%;
+  width: 200px;
+  position: fixed;
+  top: 0;
+  left: -250px; /* Hidden by default */
+  background-color: #111;
+  padding-top: 60px;
+  transition: left 0.3s;
+  z-index: 1000;
+}
+
+.sidebar a {
+  padding: 15px 20px;
+  text-decoration: none;
+  font-size: 18px;
+  color: white;
+  display: block;
+}
+
+.sidebar a:hover {
+  background-color: #575757;
+}
+
+#main {
+  margin-top: 40px;
+  padding: 20px;
+  transition: margin-left 0.3s;
+  position: absolute;
+}
+
+.sidebar-visible .sidebar {
+  left: 0;
 }
