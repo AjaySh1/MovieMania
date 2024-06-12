@@ -95,11 +95,21 @@ document.getElementById('where-to-watch').addEventListener('click', function() {
 });
 
 document.getElementById('filter').addEventListener('click', function() {
-  alert('Filter clicked');
+  // alert('Filter clicked');
   // Add your logic here
 });
 
-document.getElementById('add-to-watchlist').addEventListener('click', function() {
-  alert('Add to Watchlist clicked');
-  // Add your logic here
+document.addEventListener("DOMContentLoaded", () => {
+  let filterButton = document.getElementById("filter");
+  let dropdownContent = document.querySelector(".dropdown-content");
+  let addto = document.getElementById("add-to-watchlist");
+  filterButton.addEventListener("click", () => {
+      if (dropdownContent.style.display === "block") {
+          dropdownContent.style.display = "none";
+             addto.style.marginTop="20px";
+      } else {
+          dropdownContent.style.display = "block";
+          addto.style.marginTop="200px";
+      }
+  });
 });
