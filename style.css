@@ -168,11 +168,11 @@ main {
   margin-top: 53px;
   height: 100%;
   width: 200px;
-  position: fixed;
+  position:fixed;
   top: 0;
   left: -250px; /* Hidden by default */
   background-color: #111;
-  padding-top: 65px;
+  padding-top: 30px;
   transition: left 0.3s;
   z-index: 1000;
 }
@@ -238,15 +238,16 @@ main {
 .dropdown-content a {
   float: none;
   color: black;
-  padding: 12px 16px;
+  padding: 5px 20px;
   text-decoration: none;
   display: block;
   text-align: left;
+  font-size: smaller;
 }
 
 /* Add a grey background color to dropdown links on hover */
 .dropdown-content a:hover {
-  background-color: #ddd;
+  background-color: #8f8d8d;
 }
 
 /* Show the dropdown menu on hover */
@@ -264,4 +265,31 @@ main {
 .sideelemnts
 {
   margin-top: 10px;
+} 
+ #dropdown-content2 {
+  display: none;
+  justify-content: space-between;
+  padding: 10px;
+  border: 1px solid #ccc;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  background-color: #f9f9f9;
+  z-index: 1;
+}
+
+#dropdown-content2 a {
+  font-size: small;
+  color: black;
+  padding: 5px;
+  text-decoration: none;
+  display: block;
+}
+
+#dropdown-content2 a:hover {
+  background-color:#8f8d8d;
+}
+
+.leftfilter, .rightfilter {
+  
+  padding: 5px;
+  width: 45%; /* Adjust width to fit the flex container */
 }

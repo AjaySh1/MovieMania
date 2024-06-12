@@ -109,11 +109,11 @@ document.addEventListener("DOMContentLoaded", () => {
              addto.style.marginTop="20px";
       } else {
           dropdownContent.style.display = "block";
-          addto.style.marginTop="200px";
+          addto.style.marginTop="100px";
       }
   });
 });
-
+//javascript for dcropdown content
 document.getElementById('revenue').addEventListener('click', function () {
   fetchAllMovies('https://api.themoviedb.org/3/discover/movie?sort_by=revenue.desc&api_key=3fd2be6f0c70a2a598f084ddfb75487c&page=')
       .then(movies => { showMovies(movies); })
@@ -130,3 +130,19 @@ document.getElementById('rating').addEventListener('click', function () {
       .catch(error => console.error('Error fetching movies:', error));
 });
 // filter elements
+
+
+document.addEventListener("DOMContentLoaded", () => {
+  let filterButton = document.getElementById("filt");
+  let dropdownContent = document.getElementById("dropdown-content2");
+  let addto = document.getElementById("add-to-watchlist");
+  filterButton.addEventListener("click", () => {
+      if (dropdownContent.style.display === "flex") {
+          dropdownContent.style.display = "none";
+             
+      } else {
+          dropdownContent.style.display = "flex";
+          
+      }
+  });
+});
