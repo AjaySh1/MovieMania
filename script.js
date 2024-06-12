@@ -1,4 +1,4 @@
-const API_URL = 'https://api.themoviedb.org/3/discover/movie?sort_by=revenue.desc&api_key=3fd2be6f0c70a2a598f084ddfb75487c&page=1'
+const API_URL = 'https://api.themoviedb.org/3/discover/movie?sort_by=vote_count.desc&api_key=3fd2be6f0c70a2a598f084ddfb75487c&page='
 const IMG_PATH = 'https://image.tmdb.org/t/p/w1280'
 const SEARCH_API = 'https://api.themoviedb.org/3/search/movie?api_key=3fd2be6f0c70a2a598f084ddfb75487c&query="'
 
@@ -7,38 +7,38 @@ const form = document.getElementById('form')
 const search = document.getElementById('search')
 
 
-const fetchMovies = async (page) => {
-    const response = await fetch(`https://api.themoviedb.org/3/discover/movie?sort_by=revenue.desc&api_key=3fd2be6f0c70a2a598f084ddfb75487c&page=${page}`);
+const fetchMovies = async (page,url) => {
+    const response = await fetch(url+`${page}`);
     const data = await response.json();
     return data.results;
   };
   
-  const fetchAllMovies = async () => {
+  const fetchAllMovies = async (url) => {
     let allMovies = [];
     const totalPages = 2; // Number of pages to fetch
   
     for (let page = 1; page <= totalPages; page++) {
-      const movies = await fetchMovies(page);
+      const movies = await fetchMovies(page,url);
       allMovies = allMovies.concat(movies);
     }
   
     return allMovies;
   };
 // Get initial movies
-fetchAllMovies()
+fetchAllMovies(API_URL)
   .then(movies => {showMovies(movies);})
   .catch(error => console.error('Error fetching movies:', error));
 
 // getMovies(API_URL)
-async function getMovies(url) {
-    const res = await fetch(url)
-    const data = await res.json()
+// async function getMovies(url) {
+//     const res = await fetch(url)
+//     const data = await res.json()
 
-    showMovies(data.results)
-}
+//     showMovies(data.results)
+// }
 
 function showMovies(movies) {
-    // main.innerHTML = ''
+    main.innerHTML = ''
 
     movies.forEach((movie) => {
         const { title, poster_path, vote_average, overview } = movie
@@ -113,3 +113,20 @@ document.addEventListener("DOMContentLoaded", () => {
       }
   });
 });
+
+document.getElementById('revenue').addEventListener('click', function () {
+  fetchAllMovies('https://api.themoviedb.org/3/discover/movie?sort_by=revenue.desc&api_key=3fd2be6f0c70a2a598f084ddfb75487c&page=')
+      .then(movies => { showMovies(movies); })
+      .catch(error => console.error('Error fetching movies:', error));
+});
+document.getElementById('popularity').addEventListener('click', function () {
+  fetchAllMovies('https://api.themoviedb.org/3/discover/movie?sort_by=popularity.desc&api_key=3fd2be6f0c70a2a598f084ddfb75487c&page=')
+      .then(movies => { showMovies(movies); })
+      .catch(error => console.error('Error fetching movies:', error));
+});
+document.getElementById('rating').addEventListener('click', function () {
+  fetchAllMovies('https://api.themoviedb.org/3/discover/movie?sort_by=vote_average.desc&api_key=3fd2be6f0c70a2a598f084ddfb75487c&page=')
+      .then(movies => { showMovies(movies); })
+      .catch(error => console.error('Error fetching movies:', error));
+});
+// filter elements
