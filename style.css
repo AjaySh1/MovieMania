@@ -247,7 +247,7 @@ main {
 
 /* Add a grey background color to dropdown links on hover */
 .dropdown-content a:hover {
-  background-color: #c0c0c0;
+  background-color: #dfd4d4;
 }
 
 /* Show the dropdown menu on hover */
@@ -292,7 +292,7 @@ main {
 }
 
 #dropdown-content2 a:hover {
-  background-color:#c0c0c0;
+  background-color:#dcd2d2;
 }
 
 .leftfilter, .rightfilter {
@@ -303,5 +303,5 @@ main {
 
 
 .dropdown-content a.active {
-  background-color: red;
+  background-color: rgb(129, 125, 130);
 }

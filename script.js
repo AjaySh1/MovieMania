@@ -99,14 +99,19 @@ document.getElementById('sidebar-toggle').addEventListener('click', function() {
 document.addEventListener("DOMContentLoaded", () => {
   let filterButton = document.getElementById("filter");
   let dropdownContent = document.querySelector(".dropdown-content");
+  let dropdown=document.querySelector(".dropdown");
   let addto = document.getElementById("add-to-watchlist");
   filterButton.addEventListener("click", () => {
       if (dropdownContent.style.display === "block") {
           dropdownContent.style.display = "none";
              addto.style.marginTop="20px";
+             dropdown.style.backgroundColor='';
+            
       } else {
+          
           dropdownContent.style.display = "block";
-          addto.style.marginTop="100px";
+          addto.style.marginTop="120px";
+          dropdown.style.backgroundColor='#960606';
       }
   });
 });
@@ -139,18 +144,20 @@ document.getElementById('rating').addEventListener('click', function () {
   prev_url = 'https://api.themoviedb.org/3/discover/movie?sort_by=vote_average.desc';
 });
 //js for filter ends
-
+document.getElementById('popularity').classList.add('active');
 
 // js for genre part start
 document.addEventListener("DOMContentLoaded", () => {
   let filterButton = document.getElementById("filt");
   let dropdownContent = document.getElementById("dropdown-content2");
- 
+  let dropdown=document.getElementById("did");
   filterButton.addEventListener("click", () => {
       if (dropdownContent.style.display === "flex") {
           dropdownContent.style.display = "none";
+          dropdown.style.backgroundColor="";
       } else {
           dropdownContent.style.display = "flex";
+          dropdown.style.backgroundColor="#960606";
       }
   });
 });
@@ -165,7 +172,7 @@ const handleGenreLinkClick2= (url, element) => {
   document.querySelectorAll('#dropdown-content2 a').forEach((link)=> {
     link.style.backgroundColor = '';  // Reset background color
   });
-  element.style.backgroundColor = 'red';  // Set 
+  element.style.backgroundColor = 'rgb(129, 125, 130)';  // Set 
 };
 
 // Event listeners for genre links in the second dropdown
@@ -173,9 +180,21 @@ document.querySelectorAll('#dropdown-content2 a').forEach((link) => {
   link.addEventListener('click', function (event) {
    
     let genreId = this.id;
-    let genreUrl = `${prev_url}&with_genres=${genreId}&api_key=3fd2be6f0c70a2a598f084ddfb75487c&page=`;
+  
+    let genreUrl;
+    if(genreId==='111')
+      {
+          genreUrl=`${prev_url}&api_key=3fd2be6f0c70a2a598f084ddfb75487c&page=`
+      }
+      else
+      {
+           genreUrl = `${prev_url}&with_genres=${genreId}&api_key=3fd2be6f0c70a2a598f084ddfb75487c&page=`;
+      }
+
     handleGenreLinkClick2(genreUrl, this);
   });
 });
+document.getElementById('111').classList.add('active');
 // 
+
 // js for genre part ends.
