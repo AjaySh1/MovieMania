@@ -1,12 +1,13 @@
-const API_URL = 'https://api.themoviedb.org/3/discover/movie?sort_by=vote_count.desc&api_key=3fd2be6f0c70a2a598f084ddfb75487c&page='
+const API_URL = 'https://api.themoviedb.org/3/discover/movie?sort_by=popularity.desc&api_key=3fd2be6f0c70a2a598f084ddfb75487c&page='
 const IMG_PATH = 'https://image.tmdb.org/t/p/w1280'
 const SEARCH_API = 'https://api.themoviedb.org/3/search/movie?api_key=3fd2be6f0c70a2a598f084ddfb75487c&query="'
 
-const main = document.getElementById('main')
-const form = document.getElementById('form')
-const search = document.getElementById('search')
+const main = document.getElementById('main');
+const form = document.getElementById('form');
+const search = document.getElementById('search');
 
-
+var prev_url='https://api.themoviedb.org/3/discover/movie?sort_by=popularity.desc';
+//function for fetching movies
 const fetchMovies = async (page,url) => {
     const response = await fetch(url+`${page}`);
     const data = await response.json();
@@ -24,19 +25,15 @@ const fetchMovies = async (page,url) => {
   
     return allMovies;
   };
+
 // Get initial movies
 fetchAllMovies(API_URL)
   .then(movies => {showMovies(movies);})
   .catch(error => console.error('Error fetching movies:', error));
 
-// getMovies(API_URL)
-// async function getMovies(url) {
-//     const res = await fetch(url)
-//     const data = await res.json()
 
-//     showMovies(data.results)
-// }
 
+//function for showing movies
 function showMovies(movies) {
     main.innerHTML = ''
 
@@ -61,6 +58,7 @@ function showMovies(movies) {
     })
 }
 
+//function for genarating class
 function getClassByRate(vote) {
     if(vote >= 8) {
         return 'green'
@@ -70,7 +68,7 @@ function getClassByRate(vote) {
         return 'red'
     }
 }
-
+//js for search button
 form.addEventListener('submit', (e) => {
     e.preventDefault()
 
@@ -84,21 +82,20 @@ form.addEventListener('submit', (e) => {
         window.location.reload()
     }
 })
+// js for head ends here
+
+
+
+
+
+// js for side bar starts here
 
 document.getElementById('sidebar-toggle').addEventListener('click', function() {
   document.body.classList.toggle('sidebar-visible');
 });
 
-document.getElementById('where-to-watch').addEventListener('click', function() {
-  alert('Where to Watch clicked');
-  //add your code
-});
 
-document.getElementById('filter').addEventListener('click', function() {
-  // alert('Filter clicked');
-  // Add your logic here
-});
-
+//js for filter starts
 document.addEventListener("DOMContentLoaded", () => {
   let filterButton = document.getElementById("filter");
   let dropdownContent = document.querySelector(".dropdown-content");
@@ -113,36 +110,72 @@ document.addEventListener("DOMContentLoaded", () => {
       }
   });
 });
+
+const handleLinkClick = (url, element) => {
+  fetchAllMovies(url)
+    .then(movies => { showMovies(movies); })
+    .catch(error => console.error('Error fetching movies:', error));
+
+  // Update active link background color
+  document.querySelectorAll('.dropdown-content a').forEach(link => {
+    link.classList.remove('active');
+  });
+  element.classList.add('active');
+};
 //javascript for dcropdown content
 document.getElementById('revenue').addEventListener('click', function () {
-  fetchAllMovies('https://api.themoviedb.org/3/discover/movie?sort_by=revenue.desc&api_key=3fd2be6f0c70a2a598f084ddfb75487c&page=')
-      .then(movies => { showMovies(movies); })
-      .catch(error => console.error('Error fetching movies:', error));
+  event.preventDefault();
+  handleLinkClick('https://api.themoviedb.org/3/discover/movie?sort_by=revenue.desc&api_key=3fd2be6f0c70a2a598f084ddfb75487c&page=', this);
+  prev_url = 'https://api.themoviedb.org/3/discover/movie?sort_by=revenue.desc';
 });
 document.getElementById('popularity').addEventListener('click', function () {
-  fetchAllMovies('https://api.themoviedb.org/3/discover/movie?sort_by=popularity.desc&api_key=3fd2be6f0c70a2a598f084ddfb75487c&page=')
-      .then(movies => { showMovies(movies); })
-      .catch(error => console.error('Error fetching movies:', error));
+  event.preventDefault();
+  handleLinkClick('https://api.themoviedb.org/3/discover/movie?sort_by=popularity.desc&api_key=3fd2be6f0c70a2a598f084ddfb75487c&page=', this);
+  prev_url = 'https://api.themoviedb.org/3/discover/movie?sort_by=popularity.desc';
 });
 document.getElementById('rating').addEventListener('click', function () {
-  fetchAllMovies('https://api.themoviedb.org/3/discover/movie?sort_by=vote_average.desc&api_key=3fd2be6f0c70a2a598f084ddfb75487c&page=')
-      .then(movies => { showMovies(movies); })
-      .catch(error => console.error('Error fetching movies:', error));
+  event.preventDefault();
+  handleLinkClick('https://api.themoviedb.org/3/discover/movie?sort_by=vote_average.desc&api_key=3fd2be6f0c70a2a598f084ddfb75487c&page=', this);
+  prev_url = 'https://api.themoviedb.org/3/discover/movie?sort_by=vote_average.desc';
 });
-// filter elements
+//js for filter ends
 
 
+// js for genre part start
 document.addEventListener("DOMContentLoaded", () => {
   let filterButton = document.getElementById("filt");
   let dropdownContent = document.getElementById("dropdown-content2");
-  let addto = document.getElementById("add-to-watchlist");
+ 
   filterButton.addEventListener("click", () => {
       if (dropdownContent.style.display === "flex") {
           dropdownContent.style.display = "none";
-             
       } else {
           dropdownContent.style.display = "flex";
-          
       }
   });
 });
+
+// Function to handle genre link clicks
+const handleGenreLinkClick2= (url, element) => {
+  fetchAllMovies(url)
+    .then(movies => { showMovies(movies); })
+    .catch(error => console.error('Error fetching movies:', error));
+
+  // Update active link background color
+  document.querySelectorAll('#dropdown-content2 a').forEach((link)=> {
+    link.style.backgroundColor = '';  // Reset background color
+  });
+  element.style.backgroundColor = 'red';  // Set 
+};
+
+// Event listeners for genre links in the second dropdown
+document.querySelectorAll('#dropdown-content2 a').forEach((link) => {
+  link.addEventListener('click', function (event) {
+   
+    let genreId = this.id;
+    let genreUrl = `${prev_url}&with_genres=${genreId}&api_key=3fd2be6f0c70a2a598f084ddfb75487c&page=`;
+    handleGenreLinkClick2(genreUrl, this);
+  });
+});
+// 
+// js for genre part ends.
