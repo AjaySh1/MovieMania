@@ -123,16 +123,7 @@ form.addEventListener('submit', (e) => {
 // JS for sidebar toggle
 var flag=true;
 document.getElementById('sidebar-toggle').addEventListener('click', function () {
-      if(flag)
-        {
-            flag=false;
-            this.innerHTML="";
-        }
-        else
-        {
-            flag=true;
-            this.innerHTML="☰";
-        }
+     
     document.body.classList.toggle('sidebar-visible');
 });
 
