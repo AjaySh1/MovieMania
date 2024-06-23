@@ -1,7 +1,7 @@
-const API_URL = 'https://api.themoviedb.org/3/discover/movie?sort_by=popularity.desc&api_key=3fd2be6f0c70a2a598f084ddfb75487c&page=';
+const API_URL = 'https://api.themoviedb.org/3/discover/movie?sort_by=popularity.desc&api_key=3ba758977c84617b0c5934c60b2a67b4&page=';
 const IMG_PATH = 'https://image.tmdb.org/t/p/w1280';
-const SEARCH_API = 'https://api.themoviedb.org/3/search/movie?api_key=3fd2be6f0c70a2a598f084ddfb75487c&query=';
-const WATCH_PROVIDERS_API = (id) => `https://api.themoviedb.org/3/movie/${id}/watch/providers?api_key=3fd2be6f0c70a2a598f084ddfb75487c`;
+const SEARCH_API = 'https://api.themoviedb.org/3/search/movie?api_key=3ba758977c84617b0c5934c60b2a67b4&query=';
+const WATCH_PROVIDERS_API = (id) => `https://api.themoviedb.org/3/movie/${id}/watch/providers?api_key=3ba758977c84617b0c5934c60b2a67b4`;
 
 const main = document.getElementById('main');
 const form = document.getElementById('form');
@@ -170,17 +170,17 @@ const handleLinkClick = (url, element) => {
 // JavaScript for dropdown content
 document.getElementById('revenue').addEventListener('click', function (event) {
     event.preventDefault();
-    handleLinkClick('https://api.themoviedb.org/3/discover/movie?sort_by=revenue.desc&api_key=3fd2be6f0c70a2a598f084ddfb75487c&page=', this);
+    handleLinkClick('https://api.themoviedb.org/3/discover/movie?sort_by=revenue.desc&api_key=3ba758977c84617b0c5934c60b2a67b4&page=', this);
     prev_url = 'https://api.themoviedb.org/3/discover/movie?sort_by=revenue.desc';
 });
 document.getElementById('popularity').addEventListener('click', function (event) {
     event.preventDefault();
-    handleLinkClick('https://api.themoviedb.org/3/discover/movie?sort_by=popularity.desc&api_key=3fd2be6f0c70a2a598f084ddfb75487c&page=', this);
+    handleLinkClick('https://api.themoviedb.org/3/discover/movie?sort_by=popularity.desc&api_key=3ba758977c84617b0c5934c60b2a67b4&page=', this);
     prev_url = 'https://api.themoviedb.org/3/discover/movie?sort_by=popularity.desc';
 });
 document.getElementById('rating').addEventListener('click', function (event) {
     event.preventDefault();
-    handleLinkClick('https://api.themoviedb.org/3/discover/movie?sort_by=vote_average.desc&api_key=3fd2be6f0c70a2a598f084ddfb75487c&page=', this);
+    handleLinkClick('https://api.themoviedb.org/3/discover/movie?sort_by=vote_average.desc&api_key=3ba758977c84617b0c5934c60b2a67b4&page=', this);
     prev_url = 'https://api.themoviedb.org/3/discover/movie?sort_by=vote_average.desc';
 });
 document.getElementById('popularity').classList.add('active');
@@ -224,9 +224,9 @@ document.querySelectorAll('#dropdown-content2 a').forEach((link) => {
 
         let genreUrl;
         if (genreId === '111') {
-            genreUrl = `${prev_url}&api_key=3fd2be6f0c70a2a598f084ddfb75487c&page=`;
+            genreUrl = `${prev_url}&api_key=3ba758977c84617b0c5934c60b2a67b4&page=`;
         } else {
-            genreUrl = `${prev_url}&with_genres=${genreId}&api_key=3fd2be6f0c70a2a598f084ddfb75487c&page=`;
+            genreUrl = `${prev_url}&with_genres=${genreId}&api_key=3ba758977c84617b0c5934c60b2a67b4&page=`;
         }
     handleGenreLinkClick2(genreUrl, this);
   
