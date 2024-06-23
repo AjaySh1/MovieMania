@@ -1,28 +1,29 @@
 # MovieMania
 
-<p align="center">
-<img src="https://github.com/AjaySh1/MovieMania/blob/main/MovieMania.png" width="auto" height="auto" />
-</p>
+MovieMania is a web application that allows users to explore and search for movies. It uses the OMDb API to fetch movie details, including ratings, posters, and more.
 
- 
-## This is an interactive website where you can discover your favourite movies,add them to your watchlist,find where to watch and get a overview about them.
-Click on the link given below.
+## Features
 
-<p align="left">
-    <a href="https://ajaysh1.github.io/MovieMania/">MovieMania</a>
-    <p>
-     
+- **Search Movies:** Search for movies by title.
+- **Movie Details:** View detailed information about movies including plot, ratings, and more.
+- **Responsive Design:** Fully responsive design for all device sizes.
 
+## Screenshots
 
-## Just run the website!!!
+![Home Page](screenshots/home.png)
+![Search Results](screenshots/search_results.png)
+![Movie Details](screenshots/movie_details.png)
 
+## Demo
 
-## Also
+A live demo of the project is available at: [MovieMania Demo](https://ajaysh1.github.io/MovieMania/)
 
-As I m learining/exploring new frameworks and databases so i will keep updating it.Hope you like it.
+## Installation
 
+To run this project locally, follow these steps:
 
-## Thank you for visiting 
+1. **Clone the repository:**
 
-<br />
-
+   ```bash
+   git clone https://github.com/AjaySh1/MovieMania.git
+   cd MovieMania
