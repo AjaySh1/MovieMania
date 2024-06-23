@@ -1,7 +1,7 @@
 # MovieMania
 
 <p align="center">
-<img src="https://github.com/animesh30-dev/VishwaVidyalaya_main/assets/146109979/4ef04d14-20ba-449f-9e70-06527183ec61" width="282" height="72" />
+<img src="https://github.com/AjaySh1/MovieMania/blob/main/MovieMania.png" width="282" height="72" />
 </p>
 
  
@@ -9,7 +9,7 @@
 link to the YouTube video:-
 
 <p align="left">
-    <a href="https://ajaysh1.github.io/MovieMania/"><img alt="MovieMania"  src="https://github.com/animesh30-dev/VishwaVidyalaya_main/assets/146109979/4ef04d14-20ba-449f-9e70-06527183ec61" width="282" height="72"/></a>
+    <a href="https://ajaysh1.github.io/MovieMania/"><img alt="MovieMania"  src="https://github.com/AjaySh1/MovieMania/blob/main/MovieMania.png" width="282" height="72"/></a>
     <p>
      
 
