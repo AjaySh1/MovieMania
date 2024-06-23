@@ -10,9 +10,9 @@ MovieMania is a web application that allows users to explore and search for movi
 
 ## Screenshots
 
-![Home Page](screenshots/home.png)
-![Search Results](screenshots/search_results.png)
-![Movie Details](screenshots/movie_details.png)
+![Home Page](https://github.com/AjaySh1/MovieMania/blob/main/moviemania_screenshots/moviemaniahome.png)
+![Search Results](https://github.com/AjaySh1/MovieMania/blob/main/moviemania_screenshots/moviemaniasearch.png)
+![Movie Details](https://github.com/AjaySh1/MovieMania/blob/main/moviemania_screenshots/moviemaniadetail.png)
 
 ## Demo
 
