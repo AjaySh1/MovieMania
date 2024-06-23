@@ -6,7 +6,7 @@
 
  
 ## This is an interactive website where you can discover your favourite movies,add them to your watchlist,find where to watch and get a overview about them.
-link to the YouTube video:-
+Click on the image given below.
 
 <p align="left">
     <a href="https://ajaysh1.github.io/MovieMania/"><img alt="MovieMania"  src="https://github.com/AjaySh1/MovieMania/blob/main/MovieMania.png" width="auto" height="auto"/></a>
