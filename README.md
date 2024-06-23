@@ -9,7 +9,7 @@
 Click on the link given below.
 
 <p align="left">
-    <a href="https://ajaysh1.github.io/MovieMania/"></a>
+    <a href="https://ajaysh1.github.io/MovieMania/">MovieMania</a>
     <p>
      
 
