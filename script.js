@@ -1,7 +1,7 @@
-const API_URL = 'https://api.themoviedb.org/3/discover/movie?sort_by=popularity.desc&api_key=3ba758977c84617b0c5934c60b2a67b4&page=';
+const API_URL = 'https://api.themoviedb.org/3/discover/movie?sort_by=popularity.desc&api_key=ajay&page=';
 const IMG_PATH = 'https://image.tmdb.org/t/p/w1280';
-const SEARCH_API = 'https://api.themoviedb.org/3/search/movie?api_key=3ba758977c84617b0c5934c60b2a67b4&query=';
-const WATCH_PROVIDERS_API = (id) => `https://api.themoviedb.org/3/movie/${id}/watch/providers?api_key=3ba758977c84617b0c5934c60b2a67b4`;
+const SEARCH_API = 'https://api.themoviedb.org/3/search/movie?api_key=ajay&query=';
+const WATCH_PROVIDERS_API = (id) => `https://api.themoviedb.org/3/movie/${id}/watch/providers?api_key=ajay`;
 
 const main = document.getElementById('main');
 const form = document.getElementById('form');
@@ -104,34 +104,29 @@ function getClassByRate(vote) {
 
 // Event listener for search form
 form.addEventListener('submit', (e) => {
-    
+    e.preventDefault();
 
-    e.preventDefault()
+    const searchTerm = search.value;
 
-    const searchTerm = search.value
+    if (searchTerm && searchTerm !== '') {
+        getMovies(SEARCH_API + searchTerm);
 
-    if(searchTerm && searchTerm !== '') {
-        getMovies(SEARCH_API + searchTerm)
-
-        search.value = ''
+        search.value = '';
     } else {
-        window.location.reload()
+        window.location.reload();
     }
-
 });
 
 // JS for sidebar toggle
-var flag=true;
+var flag = true;
 document.getElementById('sidebar-toggle').addEventListener('click', function () {
-    if(flag)
-        {
-            this.innerHTML="&#10005;";
-            flag=false;
-        }
-        else
-        {  flag=true;
-            this.innerHTML="☰";
-        }
+    if (flag) {
+        this.innerHTML = "&#10005;";
+        flag = false;
+    } else {
+        flag = true;
+        this.innerHTML = "☰";
+    }
     document.body.classList.toggle('sidebar-visible');
 });
 
@@ -170,17 +165,17 @@ const handleLinkClick = (url, element) => {
 // JavaScript for dropdown content
 document.getElementById('revenue').addEventListener('click', function (event) {
     event.preventDefault();
-    handleLinkClick('https://api.themoviedb.org/3/discover/movie?sort_by=revenue.desc&api_key=3ba758977c84617b0c5934c60b2a67b4&page=', this);
+    handleLinkClick('https://api.themoviedb.org/3/discover/movie?sort_by=revenue.desc&api_key=ajay&page=', this);
     prev_url = 'https://api.themoviedb.org/3/discover/movie?sort_by=revenue.desc';
 });
 document.getElementById('popularity').addEventListener('click', function (event) {
     event.preventDefault();
-    handleLinkClick('https://api.themoviedb.org/3/discover/movie?sort_by=popularity.desc&api_key=3ba758977c84617b0c5934c60b2a67b4&page=', this);
+    handleLinkClick('https://api.themoviedb.org/3/discover/movie?sort_by=popularity.desc&api_key=ajay&page=', this);
     prev_url = 'https://api.themoviedb.org/3/discover/movie?sort_by=popularity.desc';
 });
 document.getElementById('rating').addEventListener('click', function (event) {
     event.preventDefault();
-    handleLinkClick('https://api.themoviedb.org/3/discover/movie?sort_by=vote_average.desc&api_key=3ba758977c84617b0c5934c60b2a67b4&page=', this);
+    handleLinkClick('https://api.themoviedb.org/3/discover/movie?sort_by=vote_average.desc&api_key=ajay&page=', this);
     prev_url = 'https://api.themoviedb.org/3/discover/movie?sort_by=vote_average.desc';
 });
 document.getElementById('popularity').classList.add('active');
@@ -224,13 +219,11 @@ document.querySelectorAll('#dropdown-content2 a').forEach((link) => {
 
         let genreUrl;
         if (genreId === '111') {
-            genreUrl = `${prev_url}&api_key=3ba758977c84617b0c5934c60b2a67b4&page=`;
+            genreUrl = `${prev_url}&api_key=ajay&page=`;
         } else {
-            genreUrl = `${prev_url}&with_genres=${genreId}&api_key=3ba758977c84617b0c5934c60b2a67b4&page=`;
+            genreUrl = `${prev_url}&with_genres=${genreId}&api_key=ajay&page=`;
         }
     handleGenreLinkClick2(genreUrl, this);
   
 });
 });
-
-// js for genre part ends.
