@@ -157,7 +157,7 @@ document.getElementById('rating').addEventListener('click', function (event) {
     prev_url = 'https://api.themoviedb.org/3/discover/movie?sort_by=vote_average.desc';
 });
 document.getElementById('popularity').classList.add('active');
-	@@ -224,9 +224,9 @@ document.querySelectorAll('#dropdown-content2 a').forEach((link) => {
+ document.querySelectorAll('#dropdown-content2 a').forEach((link) => {
 
         let genreUrl;
         if (genreId === '111') {
