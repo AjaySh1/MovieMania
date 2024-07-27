@@ -101,8 +101,13 @@ async function showWatchlist() {
         const { title, poster_path, vote_average, overview, id } = movie;
 
         // Fetch watch providers asynchronously
-        const watchProviders = await fetchWatchProviders(id);
-        const watchProvidersHTML = getWatchProvidersHTML(watchProviders);
+        let watchProvidersHTML = '';
+        try {
+            const watchProviders = await fetchWatchProviders(id);
+            watchProvidersHTML = getWatchProvidersHTML(watchProviders);
+        } catch (error) {
+            console.error(`Error fetching watch providers for movie ID ${id}:`, error);
+        }
 
         const movieEl = document.createElement('div');
         movieEl.classList.add('movie');
@@ -117,11 +122,39 @@ async function showWatchlist() {
                 <h3>Overview</h3>
                 ${overview}
                 ${watchProvidersHTML}
-               
+                <button class="remove-btn" data-id="${id}" >Remove</button>
+            </div>
         `;
         main.appendChild(movieEl);
     }
+
+    document.querySelectorAll('.remove-btn').forEach(button => {
+        button.addEventListener('click', addremovelist);
+    });
 }
+
+function addremovelist(event) {
+    const movieId = parseInt(event.target.dataset.id);
+    const movieIndex = watchlist.findIndex(m => m.id === movieId);
+
+    if (movieIndex === -1) {
+        alert("Movie not found in the watchlist!");
+    } else {
+        const movie = watchlist[movieIndex];
+        // Movie is in the watchlist, remove it
+        watchlist.splice(movieIndex, 1);
+        localStorage.setItem('watchlist', JSON.stringify(watchlist));
+        alert(`${movie.title} removed from your watchlist!`);
+
+        // Optionally, refresh the watchlist view
+        showWatchlist();
+    }
+}
+
+
+
+
+
 
 // Function to generate HTML for watch providers
 function getWatchProvidersHTML(watchProviders) {

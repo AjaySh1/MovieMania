@@ -336,7 +336,7 @@ main {
   border-color: #960606;
 }
 
-.watchlist-btn {
+.watchlist-btn,.remove-btn {
   margin-top: 10px;
   border: 2px solid #000000; /* Add a border with the same color as the text */
   background-color:  #cc0000;
@@ -350,7 +350,7 @@ main {
   border-radius: 5px; /* Round the corners */
 }
 
-.watchlist-btn:hover {
+.watchlist-btn:hover,.remove-btn:hover {
   background-color: #ff0000; /* Change the background color on hover */
   color: rgb(255, 255, 255); /* Change text color to contrast the new background */
   text-decoration: none; /* Remove underline on hover */
