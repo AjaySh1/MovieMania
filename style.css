@@ -196,7 +196,8 @@ main {
   position: absolute;
 }
 
-.sidebar-visible .sidebar {
+.sidebar-visible .sidebar 
+{
   left: 0;
 }
 
@@ -234,7 +235,7 @@ main {
 
 }
 
-/* Links inside the dropdown */
+
 .dropdown-content a {
   float: none;
   color: black;
@@ -245,7 +246,7 @@ main {
   font-size: smaller;
 }
 
-/* Add a grey background color to dropdown links on hover */
+
 .dropdown-content a:hover {
   background-color: #dfd4d4;
 }
@@ -305,3 +306,55 @@ main {
 .dropdown-content a.active {
   background-color: rgb(129, 125, 130);
 }
+
+#addtowatchlist {
+  font-size: 18px;
+  border: none;
+  outline: none;
+  color: white;
+  background-color: inherit;
+  font-family: inherit;
+  padding-left: 0px;
+}
+
+.side-elements {
+  padding: 10px;
+  border: 2px solid transparent; /* Default border */
+  transition: all 0.3s ease-in-out;
+}
+
+.side-elements:hover {
+  background-color: #960606;
+  color: white;
+  text-decoration: none;
+  border-color: #FF4500;
+}
+
+.side-elements.active {
+  background-color: var(--secondary-color);
+  color: white;
+  border-color: #960606;
+}
+
+.watchlist-btn {
+  margin-top: 10px;
+  border: 2px solid #000000; /* Add a border with the same color as the text */
+  background-color:  #cc0000;
+  color: white;
+ 
+  font-weight: bold;
+  font-size: 1.1em;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  padding: 5px 10px; /* Add some padding for better clickability */
+  border-radius: 5px; /* Round the corners */
+}
+
+.watchlist-btn:hover {
+  background-color: #ff0000; /* Change the background color on hover */
+  color: rgb(255, 255, 255); /* Change text color to contrast the new background */
+  text-decoration: none; /* Remove underline on hover */
+  border-color: #FF4500; /* Change border color on hover */
+}
+
+
